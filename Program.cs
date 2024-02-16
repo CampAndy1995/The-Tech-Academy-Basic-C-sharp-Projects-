@@ -1,53 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MathAndComparisonOps
+namespace MyApplication
 {
+    class Vehicle  // Base class (parent) 
+    {
+        public virtual void vehiclemake()
+        {
+            Console.WriteLine("The vehicle comes in a 4WD option");
+            Console.ReadLine();
+        }
+    }
+
+    class Chevy : Vehicle  // Derived class (child) 
+    {
+        public override void vehiclemake()
+        {
+            Console.WriteLine("This Vehicle company was onced Headquartered in Connecticut");
+            Console.ReadLine();
+        }
+    }
+
+    class Ford : Vehicle  // Derived class (child) 
+    {
+        public override void vehiclemake()
+        {
+            Console.WriteLine("This Vehicle company has always been Headquartered in Detroit, Michigan.");
+            Console.ReadLine();
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            //int total = 5 + 10;
-            //int otherTotal = 12 + 22;
-            //int combined = total + otherTotal;
-            //Console.WriteLine(combined);
-            //Console.ReadLine();
+            Vehicle myVehicle = new Vehicle();  // Create a Vehicle object
+            Vehicle myChevy = new Chevy();  // Create a Chevy object
+            Vehicle myFord = new Ford();  // Create a Ford object
 
-            //int difference = 10 - 5;
-            //Console.WriteLine("Ten minus Five = " + difference.ToString());
-            //Console.ReadLine();
-
-            //int product = 10 * 5;
-            //Console.WriteLine(product);
-            //Console.ReadLine();
-
-            //int quotient = 100 / 12.5;
-            //Console.WriteLine(quotient);
-            //Console.ReadLine();
-
-            //double quotient = 100.0 / 17.0;
-            //Console.WriteLine(quotient);
-            //Console.ReadLine();
-
-            //int remainder = 10 % 7;
-            //Console.WriteLine(remainder)
-            //Console.ReadLine();
-
-            //bool trueOrFalse = 12 < 50;
-            //Console.Write(trueOrFalse.ToString());
-            //Console.ReadLine();
-
-            int roomTemperature = 70;
-            int currentTemperature = 70;
-
-            //bool isWarm = currentTemperature <= roomTemperature;
-            bool isWarm = currentTemperature != roomTemperature;
-
-            Console.WriteLine(isWarm);
-            Console.ReadLine();
+            myVehicle.vehiclemake();
+            myChevy.vehiclemake();
+            myFord.vehiclemake();
         }
     }
 }
